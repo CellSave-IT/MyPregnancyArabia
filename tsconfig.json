@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+      "target": "ES6",
+      "module": "ESNext",
+      "moduleResolution": "node",
+      "lib": [
+        "DOM",
+        "ESNext"
+      ],
+      "jsx": "react-jsx",
+      "noEmit": true,
+      "isolatedModules": true,
+      "esModuleInterop": true,
+      "strict": false,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+      "resolveJsonModule": true,
+      "baseUrl": "./src",
+      "paths": {
+        "@/*": ["./src/*"],
+        "@pages": ["./src/pages"],
+
+      }
+    },
+    "include": ["src/**/*"]
+
+}
