@@ -1,11 +1,6 @@
 const path = require('path')
 const DotEnv = require('dotenv-webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const webpack = require('webpack');
-const CompressionPlugin = require('compression-webpack-plugin');
-
-
 module.exports = {
   entry: path.resolve(__dirname, '..', './src/index.tsx'),
   resolve: {
@@ -41,16 +36,6 @@ module.exports = {
       },
     ],
   },
-
-  optimization: {
-    minimize: true,
-    minimizer: [
-      `...`, // Keep the existing minimizers
-      new CssMinimizerPlugin(),
-    ],
-  },
-
-  
   output: {
     path: path.resolve(__dirname, '..', './build'),
     filename: 'bundle.js',
@@ -62,14 +47,6 @@ module.exports = {
     }),
     new DotEnv({
       path: path.resolve(__dirname, '..', '.env'),
-    }),
-    
-    new webpack.IgnorePlugin({
-      resourceRegExp: /^\.\/locale$/,
-      contextRegExp: /moment$/,
-    }),
-    new CompressionPlugin({
-      algorithm: 'gzip',
     }),
   ],
   stats: 'errors-only',
